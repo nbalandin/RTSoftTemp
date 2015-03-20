@@ -12,6 +12,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
 
             comboBox1.Items.Add("Grayscale");
+            comboBox1.SelectedIndex = 0;
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -8,6 +10,8 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+
+            comboBox1.Items.Add("Grayscale");
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)
@@ -25,7 +29,17 @@ namespace WindowsFormsApplication1
 
         private void buttonApplyFilter_Click(object sender, EventArgs e)
         {
-
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                {
+                    var grayImage = ImageFilter.ConvertToGrayscaleImage(pictureBox1.Image);
+                    pictureBox1.Image = grayImage;
+                    break;
+                }
+                default:
+                    break;
+            }
         }
     }
 }
